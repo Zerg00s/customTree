@@ -1,0 +1,10 @@
+{
+  "generator-sppp": {
+    "app.name": "decision-tree",
+    "sppp.version": "2.1.9",
+    "app.description": "",
+    "app.author": "Denis",
+    "conf.spFolder": "Assets",
+    "conf.distFolder": "./dist"
+  }
+}

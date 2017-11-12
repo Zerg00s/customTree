@@ -1,0 +1,660 @@
+/*Use this to modify the way the form looks when printed. Use Chrome for debugginng*/
+@media print { 
+  a[href]:after {
+    content: none !important;
+  }
+  .btn{
+    display:none;
+  }
+  #s4-titlerow, #titleAreaBox{
+    display:none !important;
+  }
+  h4{
+    line-height: 10px;
+  }
+  #contentBox{
+    position:relative;
+    top:-90px;  
+  }
+  #formContainer {
+    border:none !important;
+  }
+  .non-printable{
+    display:none !important;
+  }
+}
+
+/*Hide top ribbon with buttons like 'delete', 'edit', etc. They are useless for this form*/
+#s4-ribbonrow{
+	/*display: none;*/
+}
+
+/*Hide left navigation*/
+div#sideNavBox { 
+	display:none; 
+}
+
+#MSOZoneCell_WebPartWPQ2 {   
+    display: none;   
+}
+
+.uib-left,.uib-right{
+  width:35px !important;
+}
+
+.uib-day button, .uib-month button, .uib-year {
+  min-width:50px;
+}
+
+.fields select[name='NumberOfDaysFraction'], #NumberOfDays, #NumberOfDaysFraction {
+  width:55px;
+  height:31px;
+}
+
+input {
+	transition:all linear 0.5s;
+	background: transparent;
+}
+
+/*highlight invalid, and emptry required fields*/
+input.ng-invalid, select.ng-invalid, option.ng-invalid, textarea.ng-invalid, div.ng-invalid  {
+    color:black !important;
+    background: #FAEBD7;
+}
+
+div.ng-invalid  {
+    color:black !important;
+    background: #FA2;
+}
+
+.fields input[type='radio'].ng-invalid::after{
+ content: "*";
+ color:red;
+ font-size:18px; 
+}
+
+/* bootstrap timepicker:  */
+.uib-time input, .uib-time button{
+  width:35px;
+  min-width: 33px !important;
+}
+
+.uib-time button{
+  min-width: 42px !important;
+  margin-left: 5px;
+  padding-left: 8px;
+}
+
+[uib-timepicker]{
+  display:inline-block;
+}
+
+.time-span{
+  position:relative;
+  bottom:13px;
+}
+/* bootstrap timepicker end  */
+
+#CloseProcess{
+  width: 15px;
+  height: 15px;
+  margin-bottom: 5px;
+  margin-left: 7px;
+}  
+.centered {
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -100px;
+}
+
+div.sp-peoplepicker-autoFillContainer {
+	z-index: 3
+}
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .hidden {
+  display: none !important;
+}
+
+.full-width{
+	width:100%;
+}
+
+#formContainer {
+  border-radius: 17px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #AAA;
+  padding: 18px;
+  margin-top:30px;
+}
+
+.container [type='number'] {
+	padding-left:4px
+}
+
+input[type='number'] {
+	border: solid 1px #AAA !important;
+	height:26px;
+}
+
+input[disabled='disabled'], input[disabled] {
+	background-color:#fdfdfd !important;
+	border: solid 1px #ccc !important;
+	color:#888 !important;
+}
+
+.radio-value{
+	position:relative;
+	top:-3px;
+	width:20px;
+	height:20px;
+}
+
+.time-span{
+	width:80px !important;
+	display: inline-block;
+	margin-bottom:10px;
+}
+
+span.time-span {
+  color: rgb(119,119,119);
+}
+
+#onetIDListForm{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.save-btn{
+	float:right;
+}
+
+.fields textarea, 
+.fields .sp-peoplepicker-topLevel{
+	width:100% !important;
+}
+
+.fields select{
+	width:100%;
+	height:30px
+}
+
+.fields input[type='checkbox'], .fields input[type='radio']{
+	width:40px !important;
+}
+
+/* People Picker Modifications */
+div#strk .sp-peoplepicker-autoFillContainer{
+ z-index: 20;
+ background-color:#fff;
+}
+
+div#strk .sp-peoplepicker-topLevel{
+ background-color:#fff;
+}
+
+div#strk .sp-peoplepicker-topLevel{
+ min-height:34px;
+}
+
+div#strk{
+	background-color:inherit;
+	font-family:Arimo;
+	color: brown;
+	font-size:14px;
+	line-height:18px!important;
+}
+
+div#contentBox{
+	margin-left:0px;
+	margin-right:0px;	
+}
+
+div.ms-srch-sb{
+	background-color:#fff;
+}
+
+.srTitle{
+	font-family:Lobster !important;	
+	font-size: 48px;
+}
+
+/* People Picker Modifications */
+div#strk .sp-peoplepicker-autoFillContainer{
+	z-index: 20;
+	background-color:#fff;
+}
+div#strk .sp-peoplepicker-topLevel{
+	background-color:#fff;
+}
+div#strk .sp-peoplepicker-topLevel{
+	min-height:34px;
+}
+
+/* Date picker*/
+.full button span {
+	background-color: limegreen;
+	border-radius: 32px;
+	color: black;
+}
+.partially button span {
+	background-color: orange;
+	border-radius: 32px;
+	color: black;
+}
+
+/*ANIMATIONS BEGIN*/
+/* when hiding the an element */
+.ng-hide-add.animate         { 
+  -webkit-animation:0.3s flipOut linear; 
+  animation:0.3s flipOut linear; 
+  /*animation-direction: reverse;*/
+}
+
+/* when showing the thing */
+.ng-hide-remove.animate      { 
+  -webkit-animation:0.5s flipInX ease; 
+  animation:0.5s flipInX ease; 
+}
+
+@-webkit-keyframes flipOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes flipOut {
+	0% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+
+/* flip in */
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+@keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -ms-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    -webkit-transition-timing-function: ease-in;
+    transition-timing-function: ease-in;
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px);
+    -ms-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+}
+
+/* light speed out */
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(30deg);
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes lightSpeedOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translate3d(100%, 0, 0) skewX(30deg);
+    -ms-transform: translate3d(100%, 0, 0) skewX(30deg);
+    transform: translate3d(100%, 0, 0) skewX(30deg);
+    opacity: 0;
+  }
+}
+/*ANIMATION END*/
+
+
+/********** FILE UPLOADER**************/
+@-webkit-keyframes greenPulse {
+  from { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+  50% { background-color: #91bd09; -webkit-box-shadow: 0 0 18px #91bd09; }
+  to { background-color: #749a02; -webkit-box-shadow: 0 0 9px #333; }
+}
+
+:not([disabled]).glow-effect{
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+}
+
+.float-right{
+  float:right;
+}
+.padding-top-10{
+  padding-top:10px;
+}
+
+.fa-print{
+  cursor: pointer; cursor: hand; 
+}
+
+.fileUploader > div span {
+	line-height: 34px;
+	vertical-align: middle;
+}
+.fileUploader > div.clearfix > div {
+	margin-bottom: 5px;
+}
+.fileUploader > div > h5 {
+	padding-top: 10px;
+}
+.fileUploader input[type="text"] {
+	min-width: 200px;
+}
+.fileUploader button {
+	min-width: 0;
+}
+.fileUploader .list-group-item {
+	padding: 0px 8px;
+}
+.fileUploader li.attachmentItem {
+	opacity: 1;
+	-webkit-transition: opacity 0.333s ease-out;
+  -o-transition: opacity 0.333s ease-out;
+  transition: opacity 0.333s ease-out;
+}
+.fileUploader li.attachmentItem.pendingChange {
+	opacity: 0.5;
+}
+
+.fileUploader li.attachmentItem.pendingChange.pendingAddition {
+	background-color: rgba(210,255,210,1);
+}
+.fileUploader li.attachmentItem.pendingChange.pendingDeletion {
+	background-color: rgba(255,210,210,1);
+}
+
+.fileUploader li.attachmentItem span.glyphicon-ban-circle {
+	opacity: .5;
+}
+.fileUploader li.attachmentItem span.glyphicon-ban-circle:hover {
+	opacity: 1;
+
+	cursor: pointer;
+}
+.fileUploader input[type="button"] {
+	margin-left: 0;
+}
+/***************/
+
+/** Bootstrap WYSIWYG  END*/
+
+/*NEW DIALOG STYLES*/
+.bg-body{
+	border: solid 1px #333;
+}
+.list-heading{
+	color:#26385C;
+	padding-bottom: 10px;
+	padding-top:10px;
+}
+.options{
+	cursor: pointer;	
+}
+.options>li{
+	padding:7px 7px 7px 16px;
+
+	font-size: 16px;
+}
+.option--selected{
+	background-color: #66afe9;
+}
+.top-buffer { 
+	margin-top:20px; 
+}
+
+.bottom-buffer { 
+	margin-top:40px; 
+}
+
+.steps > div{
+ /* border:solid 1px grey !important; */
+}
+
+.rounded-corners{
+  border-radius:4px;
+  padding:10px;
+}
+.bg-primary{
+  color:white !important;
+}
+
+
+ 
+
+/********************* WYSIWYG ***************************/
+
+[text-angular-toolbar] button
+{
+	min-width:inherit;
+}
+
+.ta-hidden-input {
+	width: 1px;
+	height: 1px;
+	border: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: -10000px;
+	left: -10000px;
+	opacity: 0;
+	overflow: hidden;
+}
+
+/* add generic styling for the editor */
+.ta-root.focussed > .ta-scroll-window.form-control {
+	border-color: #66afe9;
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+.ta-editor.ta-html, .ta-scroll-window.form-control {
+	min-height: 100px;
+	height: auto;
+	overflow: auto;
+	font-family: inherit;
+	font-size: 100%;
+}
+
+.ta-scroll-window.form-control {
+	position: relative;
+	padding: 0;
+}
+
+.ta-scroll-window > .ta-bind {
+	height: auto;
+	min-height: 100px;
+	padding: 6px 12px;
+}
+
+.ta-editor:focus {
+	user-select: text;
+}
+
+/* add the styling for the awesomness of the resizer */
+.ta-resizer-handle-overlay {
+	z-index: 100;
+	position: absolute;
+	display: none;
+}
+
+.ta-resizer-handle-overlay > .ta-resizer-handle-info {
+	position: absolute;
+	bottom: 16px;
+	right: 16px;
+	border: 1px solid black;
+	background-color: #FFF;
+	padding: 0 4px;
+	opacity: 0.7;
+}
+
+.ta-resizer-handle-overlay > .ta-resizer-handle-background {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+	left: 5px;
+	top: 5px;
+	border: 1px solid black;
+	background-color: rgba(0, 0, 0, 0.2);
+}
+
+.ta-resizer-handle-overlay > .ta-resizer-handle-corner {
+	width: 10px;
+	height: 10px;
+	position: absolute;
+}
+
+.ta-resizer-handle-overlay > .ta-resizer-handle-corner-tl{
+	top: 0;
+	left: 0;
+	border-left: 1px solid black;
+	border-top: 1px solid black;
+}
+
+.ta-resizer-handle-overlay > .ta-resizer-handle-corner-tr{
+	top: 0;
+	right: 0;
+	border-right: 1px solid black;
+	border-top: 1px solid black;
+}
+
+.ta-resizer-handle-overlay > .ta-resizer-handle-corner-bl{
+	bottom: 0;
+	left: 0;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.ta-resizer-handle-overlay > .ta-resizer-handle-corner-br{
+	bottom: 0;
+	right: 0;
+	border: 1px solid black;
+	cursor: se-resize;
+	background-color: white;
+}
+
+/* copy the popover code from bootstrap so this will work even without it */
+.popover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1060;
+	display: none;
+	max-width: 276px;
+	padding: 1px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: left;
+	white-space: normal;
+	background-color: #fff;
+	-webkit-background-clip: padding-box;
+			background-clip: padding-box;
+	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, .2);
+	border-radius: 6px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+			box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+.popover.top {
+	margin-top: -10px;
+}
+.popover.bottom {
+	margin-top: 10px;
+}
+.popover-title {
+	padding: 8px 14px;
+	margin: 0;
+	font-size: 14px;
+	background-color: #f7f7f7;
+	border-bottom: 1px solid #ebebeb;
+	border-radius: 5px 5px 0 0;
+}
+.popover-content {
+	padding: 9px 14px;
+}
+.popover > .arrow,
+.popover > .arrow:after {
+	position: absolute;
+	display: block;
+	width: 0;
+	height: 0;
+	border-color: transparent;
+	border-style: solid;
+}
+.popover > .arrow {
+	border-width: 11px;
+}
+.popover > .arrow:after {
+	content: "";
+	border-width: 10px;
+}
+.popover.top > .arrow {
+	bottom: -11px;
+	left: 50%;
+	margin-left: -11px;
+	border-top-color: #999;
+	border-top-color: rgba(0, 0, 0, .25);
+	border-bottom-width: 0;
+}
+.popover.top > .arrow:after {
+	bottom: 1px;
+	margin-left: -10px;
+	content: " ";
+	border-top-color: #fff;
+	border-bottom-width: 0;
+}
+.popover.bottom > .arrow {
+	top: -11px;
+	left: 50%;
+	margin-left: -11px;
+	border-top-width: 0;
+	border-bottom-color: #999;
+	border-bottom-color: rgba(0, 0, 0, .25);
+}
+.popover.bottom > .arrow:after {
+	top: 1px;
+	margin-left: -10px;
+	content: " ";
+	border-top-width: 0;
+	border-bottom-color: #fff;
+}

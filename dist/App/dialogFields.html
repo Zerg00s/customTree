@@ -1,0 +1,50 @@
+<!-- View Mode: -->
+<div ng-if="formMode == 'View'" >
+    <div ng-repeat="step in stepsHistory track by $index" class='row steps'>
+        <h4 class='bg-primary rounded-corners'>{{step.header}}</h4>
+        <div class='bg-body rounded-corners'>
+            <h4 ng-bind-html="step.body"></h4>
+            <h3 class="list-heading" ng-hide="step.options.length == 0">Next steps</h3>
+            <ul ng-repeat="option in step.options track by $index" class="options list-group">
+                <li ng-class="appliedClass(option)" class='list-group-item' ng-click="selectOption(step, option, $parent.$index)">{{option.title}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- idea for the design: http://imgur.com/w06bSCg -->
+<!-- Edit Mode: -->
+<div ng-if="formMode != 'View'">
+    <div ng-repeat="step in steps" class='row steps'>
+        <div class="col-md-4">
+            <h3><input type="number" ng-model="step.id" /></h3>   
+        </div>
+        <div class="col-md-3">
+            <h2><input type="text" ng-model="step.header"/></h2>
+        </div>
+        <div class='col-md-6'>
+                     
+        </div> 
+        <div class='col-md-12'>
+            <div text-angular ng-model="step.body" ></div>            
+        </div>
+        <div class='col-md-8'>
+            <h4>Options</h4>
+            <div ng-repeat="option in step.options track by $index">
+                 id: <input type="number" ng-model='step.options[$index].id'>
+                 title: <input type="text" ng-model='step.options[$index].title'>
+                <a class="btn btn-danger" ng-click='deleteOption(step, option)' href="#"><i class="fa fa-remove "></i></a>
+            </div>
+            <a class="btn btn-default" ng-click='addOption(step)' href="#"><i class="fa fa-plus-circle fa-lg"></i> Add option</a>
+        </div>
+        <div class="col-md-12 top-buffer ">
+            <a class="btn btn-danger" ng-click='deleteStep(step)' href="#"><i class="fa fa-trash-o fa-lg"></i>  Delete step</a>
+            <hr>
+        </div>
+    </div>
+    
+    <a class="btn btn-default top-buffer" ng-click='addStep()' href="#"><i class="fa fa-plus-circle fa-lg"></i> Add step</a>
+</div>
+
+
+<!-- <div ng-bind-html="step.body" ng-model="step.body" id='wysiwyg-editable' class='ms-rte-layoutszone-inner-editable ms-rtestate-write' role="textbox" aria-haspopup="true" contentEditable="true" aria-autocomplete="both" aria-autocomplete="both" aria-multiline="true"></div>-->
