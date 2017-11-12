@@ -21,7 +21,7 @@ It will allow you to run `DEPLOY_ARTIFACTS.bat` deployment batch file.
 Create a new team site. Example URL: `https://portal.sharepoint.com/TestDeploy`
 
 ```sh
-git clone https://github.com/Zerg00s/customSPA.git
+git clone https://github.com/Zerg00s/customTree.git
 ```
 navigate to the PowerShell subfolder and run this command to deploy custom home page:
 ```sh
