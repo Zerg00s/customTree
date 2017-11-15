@@ -10,6 +10,4 @@
 . .\DeploymentSteps\UploadFolder.ps1
 
 
-$EntryPage =  $web.Url + "/_catalogs/masterpage/reception/kiosk.aspx"
 Write-Host "Deployment complete" 
-Write-Host $EntryPage
